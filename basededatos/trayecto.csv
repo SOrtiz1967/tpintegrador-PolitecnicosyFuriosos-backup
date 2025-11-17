@@ -1,0 +1,46 @@
+"id_trayecto","direccion_destino","direccion_origen","fecha_fin","fecha_inicio","id_reserva"
+1,"Aeropuerto Internacional Ezeiza","Garage Central Microcentro","2024-11-10","2024-11-10",1
+2,"Tigre, Buenos Aires","Aeropuerto Internacional Ezeiza","2024-11-12","2024-11-11",1
+3,"La Plata, Buenos Aires","Garage Premium Palermo","2024-11-15","2024-11-15",2
+4,"Mar del Plata, Buenos Aires","La Plata, Buenos Aires","2024-11-17","2024-11-16",2
+5,"Luján, Buenos Aires","Garage Puerto Madero","2024-11-25","2024-11-25",4
+6,"San Antonio de Areco","Luján, Buenos Aires","2024-11-27","2024-11-26",4
+7,"San Carlos de Bariloche","Garage Central Microcentro","2024-07-02","2024-07-01",18
+8,"Mendoza","Garage Premium Palermo","2024-07-11","2024-07-10",19
+9,"Córdoba Capital","Garage Puerto Madero","2024-07-21","2024-07-20",20
+10,"Mar del Plata","Garage Central Microcentro","2024-08-06","2024-08-05",21
+11,"Tandil","Garage Premium Palermo","2024-08-16","2024-08-15",22
+12,"Salta","Garage Puerto Madero","2024-09-11","2024-09-10",23
+13,"Iguazú","Garage Central Microcentro","2024-09-21","2024-09-20",24
+14,"Usuahia","Garage Premium Palermo","2024-10-06","2024-10-05",25
+15,"Puerto Madryn","Garage Puerto Madero","2024-10-16","2024-10-15",26
+16,"Carlos Paz, Córdoba","Garage Central Microcentro","2023-11-11","2023-11-10",27
+17,"Villa General Belgrano","Carlos Paz, Córdoba","2023-11-12","2023-11-11",27
+18,"Mina Clavero, Córdoba","Garage Premium Palermo","2023-11-16","2023-11-15",28
+19,"Non","Mina Clavero, Córdoba","2023-11-17","2023-11-16",28
+20,"San Martín de los Andes","Garage Puerto Madero","2023-12-21","2023-12-20",29
+21,"Villa La Angostura","San Martín de los Andes","2023-12-25","2023-12-22",29
+22,"Bariloche","Garage Central Microcentro","2023-12-23","2023-12-22",30
+23,"El Bolsón","Bariloche","2023-12-27","2023-12-24",30
+24,"Mendoza Capital","Garage Premium Palermo","2023-12-19","2023-12-18",31
+25,"Potrerillos","Mendoza Capital","2023-12-23","2023-12-20",31
+26,"San Rafael","Garage Puerto Madero","2024-01-06","2024-01-05",32
+27,"Malargüe","San Rafael","2024-01-10","2024-01-07",32
+28,"Gualeguaychú","Garage Central Microcentro","2024-01-09","2024-01-08",33
+29,"Colón","Gualeguaychú","2024-01-12","2024-01-10",33
+30,"Villa Gesell","Garage Premium Palermo","2024-01-13","2024-01-12",34
+31,"Pinamar","Villa Gesell","2024-01-15","2024-01-14",34
+32,"Cariló","Garage Puerto Madero","2024-01-16","2024-01-15",35
+33,"San Clemente","Cariló","2024-01-18","2024-01-17",35
+34,"Termas de Río Hondo","Garage Central Microcentro","2024-02-11","2024-02-10",36
+35,"Santiago del Estero","Termas de Río Hondo","2024-02-14","2024-02-12",36
+36,"Tafí del Valle","Garage Premium Palermo","2024-02-13","2024-02-12",37
+37,"Amaicha del Valle","Tafí del Valle","2024-02-16","2024-02-14",37
+38,"Cafayate","Garage Puerto Madero","2024-02-16","2024-02-15",38
+39,"Cachi","Cafayate","2024-02-19","2024-02-17",38
+40,"Humahuaca","Garage Central Microcentro","2024-03-06","2024-03-05",39
+41,"Tilcara","Humahuaca","2024-03-08","2024-03-07",39
+42,"Purmamarca","Garage Premium Palermo","2024-03-11","2024-03-10",40
+43,"Salinas Grandes","Purmamarca","2024-03-13","2024-03-12",40
+44,"El Calafate","Garage Puerto Madero","2024-03-16","2024-03-15",41
+45,"El Chaltén","El Calafate","2024-03-18","2024-03-17",41

@@ -1,0 +1,33 @@
+"id","nombre","apellido","telefono","dni","direccion","usuario","contrasena","codigo_postal","pais","membresia"
+1,"Juan","Pérez","1155667788","30123456","Av. Corrientes 1234","juan.vip@email.com","clave123","C1043","Argentina",1
+2,"María","Gómez","1166778899","32123456","Florida 456","maria.gomez@email.com","clave456","C1005","Argentina",1
+3,"Carlos","López","1144556677","34123456","Lavalle 789","carlos.lopez@email.com","clave789","C1047","Argentina",1
+4,"Ana","Martínez","1133445566","36123456","Cabildo 2345","ana.martinez@email.com","clave101","C1428","Argentina",2
+5,"Pedro","Rodríguez","1122334455","38123456","Santa Fe 3210","pedro.rodriguez@email.com","clave202","C1125","Argentina",2
+6,"Laura","Fernández","1199887766","40123456","Rivadavia 567","laura.fernandez@email.com","clave303","C1033","Argentina",2
+7,"Diego","García","1155443322","42123456","Av. Libertador 2345","diego.garcia@email.com","clave404","C1428","Argentina",1
+8,"Sofía","López","1166554433","44123456","Cabildo 1500","sofia.lopez@email.com","clave505","C1426","Argentina",2
+9,"Martín","Díaz","1177665544","46123456","Av. Santa Fe 2100","martin.diaz@email.com","clave606","C1125","Argentina",1
+10,"Lucía","Rodríguez","1188776655","48123456","Av. Corrientes 800","lucia.rodriguez@email.com","clave707","C1043","Argentina",2
+11,"Gabriel","Fernández","1199887766","50123456","Palermo 345","gabriel.fernandez@email.com","clave808","C1414","Argentina",1
+12,"Valentina","Martínez","1100998877","52123456","Belgrano 567","valentina.martinez@email.com","clave909","C1093","Argentina",2
+13,"Alejandro","Silva","1144332211","54123456","Av. Cabildo 2800","alejandro.silva@email.com","clave111","C1428","Argentina",1
+14,"Camila","Torres","1155223344","56123456","Av. Rivadavia 4500","camila.torres@email.com","clave222","C1406","Argentina",2
+15,"Facundo","Mendoza","1166334455","58123456","Av. Directorio 2300","facundo.mendoza@email.com","clave333","C1407","Argentina",1
+16,"Brenda","Rios","1177445566","60123456","Av. Nazca 1200","brenda.rios@email.com","clave444","C1419","Argentina",2
+17,"Gonzalo","Castro","1188556677","62123456","Av. Gaona 1800","gonzalo.castro@email.com","clave555","C1405","Argentina",1
+18,"Florencia","Ortiz","1199667788","64123456","Av. Juan B. Justo 3500","florencia.ortiz@email.com","clave666","C1414","Argentina",2
+19,"Lucas","Acosta","1100778899","66123456","Av. Medrano 900","lucas.acosta@email.com","clave777","C1179","Argentina",1
+20,"Carolina","Vargas","1111889977","68123456","Av. Scalabrini Ortiz 2200","carolina.vargas@email.com","clave888","C1425","Argentina",2
+21,"Matías","Romero","1122998877","70123456","Av. Córdoba 3200","matias.romero@email.com","clave999","C1186","Argentina",1
+22,"Natalia","Suarez","1133887766","72123456","Av. Santa Fe 1800","natalia.suarez@email.com","clave1010","C1123","Argentina",2
+23,"Pablo","Herrera","1144776655","74123456","Av. Pueyrredón 1500","pablo.herrera@email.com","clave1111","C1119","Argentina",1
+24,"Daniela","Gimenez","1155665544","76123456","Av. Callao 800","daniela.gimenez@email.com","clave1212","C1022","Argentina",2
+25,"Sebastián","Molina","1166554433","78123456","Av. Las Heras 2400","sebastian.molina@email.com","clave1313","C1127","Argentina",1
+26,"Verónica","Paz","1177443322","80123456","Av. Monroe 1600","veronica.paz@email.com","clave1414","C1429","Argentina",2
+27,"Ezequiel","Reyes","1188332211","82123456","Av. Triunvirato 3800","ezequiel.reyes@email.com","clave1515","C1431","Argentina",1
+28,"Agustina","Flores","1199221133","84123456","Av. Álvarez Jonte 4200","agustina.flores@email.com","clave1616","C1408","Argentina",2
+29,"Julián","Campos","1100112233","86123456","Av. La Plata 1900","julian.campos@email.com","clave1717","C1245","Argentina",1
+30,"Lourdes","Santos","1111223344","88123456","Av. Carabobo 800","lourdes.santos@email.com","clave1818","C1406","Argentina",2
+31,"Brian","Luna","1122334455","90123456","Av. Acoyte 600","brian.luna@email.com","clave1919","C1405","Argentina",1
+32,"Micaela","Cáceres","1133445566","92123456","Av. Boedo 1200","micaela.caceres@email.com","clave2020","C1221","Argentina",2

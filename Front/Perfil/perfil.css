@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    min-height: 100vh;
+    line-height: 1.6; /* Mejora legibilidad */
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 32px; /* Un poco más grande */
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.profile-card {
+    background-color: #2a2a2a;
+    border-radius: 12px; /* Más redondeado */
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    border: 2px solid transparent; /* Borde inicial transparente */
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    border-color: #D4AF37; /* Borde dorado (nuevo) al pasar el ratón */
+}
+
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Estilo para el icono SVG del avatar */
+.avatar svg {
+    width: 44px;
+    height: 44px;
+    color: #aaa;
+}
+
+.user-info h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.user-info p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.edit-btn {
+    background-image: linear-gradient(to right, #444, #333); /* Degradado */
+    border: 1px solid #666;
+    color: #fff;
+    padding: 10px 18px; /* Más padding para un mejor look */
+    border-radius: 25px; /* Más redondeado (tipo píldora) */
+    cursor: pointer;
+    font-size: 15px; /* Un poco más grande */
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+}
+
+.edit-btn:hover {
+    background-image: linear-gradient(to right, #555, #444);
+    border-color: #888;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo para el botón en modo "Guardar" */
+.edit-btn.saving {
+    background-image: linear-gradient(to right, #D4AF37, #C09B30); /* Degradado dorado (nuevo) */
+    border-color: #C09B30; /* Dorado (nuevo) */
+    color: #333; /* Texto oscuro para contraste */
+    box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3); /* Sombra dorada (nuevo) */
+}
+.edit-btn.saving:hover {
+    background-image: linear-gradient(to right, #C09B30, #A88729); /* Dorado (nuevo) */
+    border-color: #A88729; /* Dorado (nuevo) */
+    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.4); /* Sombra dorada (nuevo) */
+}
+
+/* Estilo para los iconos SVG dentro del botón */
+.edit-btn svg {
+    width: 16px;
+    height: 16px;
+    color: inherit; /* Hereda el color del texto del botón */
+}
+
+.tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #444;
+    overflow-x: auto; /* Permite scroll horizontal en móvil */
+    -webkit-overflow-scrolling: touch;
+}
+
+.tab {
+    background: none;
+    border: none;
+    color: #999;
+    padding: 14px 16px; /* Más padding vertical */
+    cursor: pointer;
+    font-size: 15px; /* Más legible */
+    font-weight: 500;
+    border-bottom: 3px solid transparent; /* Borde más grueso */
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+.tab.active {
+    color: #fff;
+    border-bottom-color: #D4AF37; /* Borde inferior dorado (nuevo) */
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.section-title {
+    font-size: 18px; /* Más jerarquía */
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 25px; /* Más espacio */
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px; /* Más espacio */
+    margin-bottom: 25px;
+}
+
+.form-row.full {
+    grid-template-columns: 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px; /* Más legible */
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.form-group input {
+    background-color: #333;
+    border: 1px solid #555; /* Borde más visible */
+    color: #fff;
+    padding: 14px; /* Más padding */
+    border-radius: 8px; /* Coherente con botones */
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Estado :focus para inputs */
+.form-group input:focus {
+    outline: none;
+    border-color: #D4AF37; /* Borde dorado (nuevo) en foco */
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3); /* Sombra dorada (nuevo) */
+}
+
+.form-group input:disabled {
+    background-color: #2a2a2a;
+    color: #888; /* Color más contrastado */
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.logout-btn {
+    width: 100%;
+    /* Colores dorados (nuevo) */
+    background-image: linear-gradient(to right, #D4AF37, #C09B30);
+    border: 1px solid #C09B30;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+    /* ----- */
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    /* Colores dorados (nuevo) */
+    background-image: linear-gradient(to right, #C09B30, #A88729);
+    border-color: #A88729;
+    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.4);
+}
+
+/* Membresías (Estilos Originales con toques dorados) */
+.membership-description {
+    color: #E0E0E0;
+    font-size: 14px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.membership-cards.two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    justify-content: center;
+}
+
+.membership-card {
+    background-color: #333;
+    border: 2px solid transparent; /* Borde inicial transparente */
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    max-width: 350px;
+    margin: 0 auto;
+    
+    /* ----- NUEVAS LÍNEAS ----- */
+    display: flex;
+    flex-direction: column;
+}
+
+.membership-card:hover {
+    border: 2px solid #D4AF37; /* Borde dorado (nuevo) al pasar el ratón */
+    transform: translateY(-4px);
+}
+
+.membership-header h4 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #E0E0E0;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #D4AF37; /* Color dorado (nuevo) para el precio */
+}
+
+.price span {
+    font-size: 0.9rem;
+    color: #E0E0E0;
+}
+
+.membership-features {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 25px;
+
+    /* ----- NUEVA LÍNEA ----- */
+    flex-grow: 1; /* Esto empuja el botón hacia abajo */
+}
+
+.membership-features li {
+    margin-bottom: 8px;
+    color: #E0E0E0;
+}
+
+.membership-btn.red {
+    /* Colores dorados (nuevo) */
+    background-image: linear-gradient(to right, #D4AF37, #C09B30);
+    border: 1px solid #C09B30;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+    /* ----- */
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600; /* Añadido para consistencia */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.membership-btn.red:hover {
+    /* Colores dorados (nuevo) */
+    background-image: linear-gradient(to right, #C09B30, #A88729);
+    border-color: #A88729;
+    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.4);
+}
+
+/* Responsividad (Combinada) */
+@media (max-width: 768px) {
+    /* Estilos nuevos */
+    .profile-card { padding: 20px; }
+    .title { font-size: 28px; }
+    .user-info h2 { font-size: 20px; }
+    .tab { font-size: 14px; min-width: 110px; }
+
+    /* Estilos originales */
+    .form-row { grid-template-columns: 1fr; }
+    .membership-cards.two-columns { grid-template-columns: 1fr; gap: 20px; }
+    .membership-card { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    /* Estilos nuevos */
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .edit-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
