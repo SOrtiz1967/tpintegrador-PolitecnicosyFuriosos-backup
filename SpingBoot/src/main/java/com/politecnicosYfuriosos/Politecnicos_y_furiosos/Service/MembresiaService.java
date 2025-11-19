@@ -6,7 +6,7 @@ import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Modelo.Cliente;
 import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Modelo.MembershipPlan;
 import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Modelo.ModeloAutorizado;
 import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Repository.Catalogo.ClienteRepository;
-import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Repository.ModeloAutorizado.ModeloAutorizadoRepository;
+import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Repository.ModeloAutorizadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -2,6 +2,7 @@ package com.politecnicosYfuriosos.Politecnicos_y_furiosos.Service;
 
 import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Dto.Perfil.ClientePerfilDTO;
 import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Modelo.Cliente;
+import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Modelo.MembershipPlan;
 import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Repository.Catalogo.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,7 +34,7 @@ public class ClienteService {
         clienteRepository.deleteById(id);
     }
 
-    public Cliente actualizarMembresia(Integer id, Cliente.MembershipPlan membresia) {
+    public Cliente actualizarMembresia(Integer id, MembershipPlan membresia) {
         Cliente cliente = clienteRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
         cliente.setMembresia(membresia);
