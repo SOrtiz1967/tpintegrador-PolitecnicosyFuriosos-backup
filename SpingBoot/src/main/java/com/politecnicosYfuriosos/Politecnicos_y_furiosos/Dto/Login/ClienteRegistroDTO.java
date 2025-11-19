@@ -1,6 +1,7 @@
 package com.politecnicosYfuriosos.Politecnicos_y_furiosos.Dto.Login;
 
 import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Modelo.Cliente;
+import com.politecnicosYfuriosos.Politecnicos_y_furiosos.Modelo.MembershipPlan;
 
 public class ClienteRegistroDTO {
     private Integer id;
@@ -13,7 +14,7 @@ public class ClienteRegistroDTO {
     private String usuario;
     private String contrasena;
     private String pais;
-    private Cliente.MembershipPlan membresia;
+    private MembershipPlan membresia;
 
     public ClienteRegistroDTO() {}
 
@@ -48,6 +49,6 @@ public class ClienteRegistroDTO {
     public String getPais() { return pais; }
     public void setPais(String pais) { this.pais = pais; }
 
-    public Cliente.MembershipPlan getMembresia() { return membresia; }
-    public void setMembresia(Cliente.MembershipPlan membresia) { this.membresia = membresia; }
+    public MembershipPlan getMembresia() { return membresia; }
+    public void setMembresia(MembershipPlan membresia) { this.membresia = membresia; }
 }

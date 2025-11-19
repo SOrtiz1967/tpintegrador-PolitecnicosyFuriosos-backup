@@ -23,10 +23,9 @@ public class Cliente {
     private boolean vip;
     private boolean habilitado;
 
-    @Enumerated(EnumType.STRING)
-    private CategoriaLicencia categoriaLicencia;
 
-    @Enumerated(EnumType.STRING)
+
+    @Enumerated(EnumType.ORDINAL)
     private MembershipPlan membresia;
 
     @OneToMany(mappedBy = "clientePrincipal")
@@ -35,16 +34,9 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente")
     private List<ReservaGaraje> reservasGaraje;
 
-    public void setMembresia(com.politecnicosYfuriosos.Politecnicos_y_furiosos.Modelo.MembershipPlan membershipPlan) {
-    }
 
-    public enum CategoriaLicencia {
-        A, B, C, D, E
-    }
 
-    public enum MembershipPlan {
-        NULL, BASICO, PREMIUM, VIP
-    }
+
 
     // Constructor vacío
     public Cliente() {}
@@ -86,8 +78,6 @@ public class Cliente {
     public boolean isHabilitado() { return habilitado; }
     public void setHabilitado(boolean habilitado) { this.habilitado = habilitado; }
 
-    public CategoriaLicencia getCategoriaLicencia() { return categoriaLicencia; }
-    public void setCategoriaLicencia(CategoriaLicencia categoriaLicencia) { this.categoriaLicencia = categoriaLicencia; }
 
     public MembershipPlan getMembresia() { return membresia; }
     public void setMembresia(MembershipPlan membresia) { this.membresia = membresia; }

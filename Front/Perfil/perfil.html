@@ -1,237 +1,363 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    
-    <link rel="stylesheet" href="Registro.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <title>Mi Perfil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="perfil.css">
 </head>
 <body>
-    <div class="container">
-        <div id="alertContainer"></div>
-        
-        <div class="cards">
-            <a class="login">Sing up</a>
-            
-           <form id="registroForm" style="gap: 35px;">
-               <div class="inputs">
- 
-                <div class="inputBox_">
-                    <div>
-                    <input type="text" id="nombre" required>
-                    <span class="user">Nombre</span>
+<div class="container">
+    <div class="header">
+        <h1 class="title">Mi Perfil</h1>
+    </div>
+
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-info">
+                <div class="avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <div class="user-info">
+                    <h2></h2>
+                    <p>Bienvenido de nuevo</p>
+                </div>
+            </div>
+            <button class="edit-btn" id="edit-toggle">
+                </button>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="datos-personales">Datos personales</button>
+            <button class="tab" data-tab="membresia">Membresía</button>
+        </div>
+
+        <div id="datos-personales" class="tab-content active">
+            <div class="form-section">
+                <h3 class="section-title">Información Personal</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre" disabled>
                     </div>
- 
-                    <div>
-                    <input type="text" id="apellido" required>
-                    <span class="user">Apellido</span>
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" placeholder="Tu apellido" disabled>
+                    </div>
                 </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dni">DNI</label>
+                        <input type="text" id="dni" placeholder="Tu DNI" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="postal">Código Postal</label>
+                        <input type="text" id="postal" placeholder="Tu código postal" disabled>
+                    </div>
                 </div>
- 
-                <div class="inputBox">
-                    <input type="number" id="dni" required>
-                    <span class="user">dni</span>
+
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" placeholder="Tu dirección" disabled>
+                    </div>
                 </div>
-                
-                <div class="inputBox">
-                    <input type="number" id="telefono" required>
-                    <span class="user">Telefono</span>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pais">País</label>
+                        <input type="text" id="pais" placeholder="Tu país" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" placeholder="Tu correo electrónico" disabled>
+                    </div>
                 </div>
- 
-                <div class="inputBox">
-                    <input type="email" id="usuario" required>
-                    <span class="user">Mail</span>
+
+                <button class="logout-btn">Cerrar sesión</button>
+            </div>
+        </div>
+
+        <div id="membresia" class="tab-content">
+            <div class="form-section">
+                <p class="membership-description">Elige el plan que mejor se adapte a tus necesidades</p>
+
+                <div class="membership-cards two-columns">
+                    <div class="membership-card">
+                        <div class="membership-header">
+                            <h4>Premium</h4>
+                            <p class="price">$19.99<span>/mes</span></p>
+                        </div>
+                        <ul class="membership-features">
+                            <li>✓ Acceso completo</li>
+                            <li>✓ Hasta 5 usuarios</li>
+                            <li>✓ Soporte prioritario</li>
+                            <li>✓ Reportes avanzados</li>
+                        </ul>
+                        <button class="membership-btn red">Suscribirse</button>
+                    </div>
+
+                    <div class="membership-card">
+                        <div class="membership-header">
+                            <h4>Empresarial</h4>
+                            <p class="price">$49.99<span>/mes</span></p>
+                        </div>
+                        <ul class="membership-features">
+                            <li>✓ Acceso ilimitado</li>
+                            <li>✓ Usuarios ilimitados</li>
+                            <li>✓ Soporte 24/7</li>
+                            <li>✓ API personalizada</li>
+                            <li>✓ Gestor de cuenta dedicado</li>
+                        </ul>
+                        <button class="membership-btn red">Suscribirse</button>
+                    </div>
                 </div>
-        
- 
-                <div class="inputBox">
-                    <input type="password" id="contrasena" required>
-                    <span>Password</span>
-                </div>
-<div class="inputBox country-selector">
-    <input type="text" id="pais" readonly required tabindex="0">
-    <span class="user">País</span>
-    
-    <div class="country-dropdown">
-        <label><input type="radio" name="country" value="Argentina">Argentina</label>
-        <label><input type="radio" name="country" value="Australia">Australia</label>
-        <label><input type="radio" name="country" value="Austria">Austria</label>
-        <label><input type="radio" name="country" value="Bélgica">Bélgica</label>
-        <label><input type="radio" name="country" value="Brasil">Brasil</label>
-        <label><input type="radio" name="country" value="Canadá">Canadá</label>
-        <label><input type="radio" name="country" value="Chile">Chile</label>
-        <label><input type="radio" name="country" value="China">China</label>
-        <label><input type="radio" name="country" value="Colombia">Colombia</label>
-        <label><input type="radio" name="country" value="Corea del Sur">Corea del Sur</label>
-        <label><input type="radio" name="country" value="Costa Rica">Costa Rica</label>
-        <label><input type="radio" name="country" value="Dinamarca">Dinamarca</label>
-        <label><input type="radio" name="country" value="Ecuador">Ecuador</label>
-        <label><input type="radio" name="country" value="Egipto">Egipto</label>
-        <label><input type="radio" name="country" value="España">España</label>
-        <label><input type="radio" name="country" value="Estados Unidos">Estados Unidos</label>
-        <label><input type="radio" name="country" value="Finlandia">Finlandia</label>
-        <label><input type="radio" name="country" value="Francia">Francia</label>
-        <label><input type="radio" name="country" value="Alemania">Alemania</label>
-        <label><input type="radio" name="country" value="Grecia">Grecia</label>
-        <label><input type="radio" name="country" value="India">India</label>
-        <label><input type="radio" name="country" value="Italia">Italia</label>
-        <label><input type="radio" name="country" value="Japón">Japón</label>
-        <label><input type="radio" name="country" value="México">México</label>
-        <label><input type="radio" name="country" value="Países Bajos">Países Bajos</label>
-        <label><input type="radio" name="country" value="Perú">Perú</label>
-        <label><input type="radio" name="country" value="Portugal">Portugal</label>
-        <label><input type="radio" name="country" value="Reino Unido">Reino Unido</label>
-        <label><input type="radio" name="country" value="Rusia">Rusia</label>
-        <label><input type="radio" name="country" value="Suiza">Suiza</label>
-        <label><input type="radio" name="country" value="Uruguay">Uruguay</label>
-        <label><input type="radio" name="country" value="Venezuela">Venezuela</label>
+            </div>
+        </div>
+
     </div>
 </div>
- 
-                    <div class="inputBox_">
-                    <div>
-                    <input type="text" id="direccion" required>
-                    <span class="user">Direccion</span>
-                    </div>
- 
-                    <div>
-                    <input type="number" id="codigo_postal" required>
-                    <span class="user">CP code</span>
-                </div>
-                </div>
- 
-                <button type="submit" id="btnRegistro" class="enter">
-                    <span id="btnText">Enter</span>
-                    <span id="btnLoading" class="loading" style="display: none;"></span>
-                </button>
-                </div>
-            </form>
-        </div>
-    </div>
- 
- 
- 
+
 <script>
-   const API_URL = 'http://localhost:8081/api/auth/register';
- 
-    const registroForm = document.getElementById('registroForm');
-    const btnRegistro = document.getElementById('btnRegistro');
-    const btnText = document.getElementById('btnText');
-    const btnLoading = document.getElementById('btnLoading');
-    const alertContainer = document.getElementById('alertContainer');
- 
-    // Manejar selección de país
-    document.querySelectorAll('.country-dropdown input[type="radio"]').forEach(radio => {
-        radio.addEventListener('change', function() {
-            const selector = this.closest('.country-selector');
-            const input = selector.querySelector('input[type="text"]');
-            input.value = this.value;
-            selector.classList.add('has-value');
-            input.blur();
-        });
-    });
- 
-    // Manejar envío del formulario
-    registroForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
+    const editToggle = document.getElementById('edit-toggle');
+    const inputs = document.querySelectorAll('#datos-personales input');
+    const profileName = document.querySelector('.user-info h2');
+    let isEditing = false;
+
+    // --- Iconos SVG como strings ---
+    const svgPencil = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+        </svg> Editar`;
+
+    const svgCheck = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg> Guardar`;
+    // --- Fin Iconos ---
+
+    function actualizarNombre() {
         const nombre = document.getElementById('nombre').value.trim();
         const apellido = document.getElementById('apellido').value.trim();
-        const dni = document.getElementById('dni').value.trim();
-        const telefono = document.getElementById('telefono').value.trim();
-        const usuario = document.getElementById('usuario').value.trim();
-        const contrasena = document.getElementById('contrasena').value.trim();
-        const pais = document.getElementById('pais').value.trim();
-        const direccion = document.getElementById('direccion').value.trim();
-        const codigo_postal = document.getElementById('codigo_postal').value.trim();
- 
-        if (!nombre || !apellido || !dni || !telefono || !usuario || !contrasena || !pais || !direccion || !codigo_postal) {
-            mostrarAlerta('Por favor complete todos los campos', 'warning');
+        profileName.textContent = `${nombre || 'Usuario'} ${apellido || 'Anónimo'}`;
+    }
+
+    function setInitialButtonState() {
+        editToggle.innerHTML = svgPencil;
+    }
+
+    /**
+     * ¡FUNCIÓN CLAVE!
+     * Carga los datos del perfil desde sessionStorage al cargar la página.
+     */
+    function cargarDatosDelPerfil() {
+        // 1. Obtener los datos del cliente guardados en el login o registro
+        const clienteData = sessionStorage.getItem('cliente');
+
+        if (!clienteData) {
+            // Si NO hay datos, significa que no ha iniciado sesión.
+            alert('No has iniciado sesión. Redirigiendo al login.');
+            // Asegúrate que la ruta a tu login sea correcta
+            window.location.href = 'Inicio_sesion.html'; 
+            return; // Detiene la ejecución
+        }
+
+        try {
+            // 2. Si SÍ hay datos, los convierte de string a objeto
+            const cliente = JSON.parse(clienteData);
+
+            // 3. Rellena el formulario con los datos reales
+            document.getElementById('nombre').value = cliente.nombre || '';
+            document.getElementById('apellido').value = cliente.apellido || '';
+            document.getElementById('dni').value = cliente.dni || '';
+            document.getElementById('postal').value = cliente.codigo_postal || ''; // Ajustado a tu JSON
+            document.getElementById('direccion').value = cliente.direccion || '';
+            document.getElementById('pais').value = cliente.pais || '';
+            document.getElementById('email').value = cliente.usuario || ''; // Ajustado a tu JSON
+
+            // 4. Actualiza el H2 del perfil
+            actualizarNombre(); 
+
+        } catch (error) {
+            console.error('Error al cargar datos del perfil:', error);
+            alert('Hubo un error al cargar tu perfil. Intenta iniciar sesión de nuevo.');
+            sessionStorage.removeItem('cliente');
+            window.location.href = 'Inicio_sesion.html';
+        }
+    }
+    
+    // --- Lógica del botón Editar/Guardar (sin cambios) ---
+    editToggle.addEventListener('click', function() {
+        isEditing = !isEditing;
+        inputs.forEach(input => {
+            // No habilitar el email (usuario) ni el DNI
+            if (input.id !== 'email' && input.id !== 'dni') {
+                 input.disabled = !isEditing;
+            }
+        });
+
+        if (isEditing) {
+            editToggle.innerHTML = svgCheck;
+            editToggle.classList.add('saving');
+            document.getElementById('nombre').focus();
+        } else {
+            editToggle.innerHTML = svgPencil;
+            editToggle.classList.remove('saving');
+            actualizarNombre();
+            // (Aquí podrías agregar un fetch 'PUT' para guardar los cambios en el backend)
+        }
+    });
+
+    // --- Lógica de Pestañas (sin cambios) ---
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const tabName = this.getAttribute('data-tab');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            this.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+
+            editToggle.style.display = (tabName === 'datos-personales') ? 'flex' : 'none';
+        });
+    });
+
+    // --- Lógica de Cerrar Sesión ---
+    document.querySelector('.logout-btn').addEventListener('click', () => {
+        sessionStorage.removeItem('cliente'); // Limpia la sesión
+        alert('Has cerrado sesión.');
+        window.location.href = 'Inicio_sesion.html'; // Redirige al login
+    });
+
+
+    // --- Lógica de Carga Inicial de la Página ---
+    document.addEventListener('DOMContentLoaded', () => {
+        // Esto se ejecuta apenas carga la página
+        
+        editToggle.style.display = 'flex';
+        setInitialButtonState();
+        
+        // ¡Esta es la función mágica!
+        // Intenta cargar los datos del perfil. Si falla, redirige al login.
+        cargarDatosDelPerfil(); 
+    });
+
+    // --- Lógica de Membresía (sin cambios) ---
+    document.querySelectorAll('.membership-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const plan = this.closest('.membership-card').querySelector('h4').textContent;
+            alert(`Te has suscrito al plan ${plan}`);
+        });
+    });
+
+    /**
+ * Realiza la petición POST a Spring Boot para cambiar la membresía del conductor.
+ * @param {number} clienteId - El ID numérico del usuario logueado.
+ * @param {string} tipoPlan - 'A' para EMPRESARIAL (conductoresA) o 'B' para PREMIUM (conductoresB).
+ */
+async function suscribirUsuario(clienteId, tipoPlan) {
+    
+    // VALIDACIÓN CRUCIAL: Previene el error 400: The given id must not be null
+    if (!clienteId || typeof clienteId !== 'number') {
+        alert("Error de sesión: El ID del usuario no es válido. Por favor, vuelva a iniciar sesión.");
+        console.error('ID de cliente no válido para la suscripción:', clienteId);
+        return; 
+    }
+    
+    const baseUrl = "http://localhost:8081";
+    // Mapeo a los endpoints del MembresiaController
+    const endpoint = (tipoPlan === 'A') ? `${baseUrl}/api/conductoresA` : `${baseUrl}/api/conductoresB`;
+    
+    // El DTO (Data Transfer Object) que Spring Boot espera
+    const data = { clienteId: clienteId }; 
+
+    try {
+        const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            // Éxito (Código 200 OK): Actualiza la sesión y notifica
+            const clienteActualizado = await response.json();
+            sessionStorage.setItem("cliente", JSON.stringify(clienteActualizado));
+            
+            alert("¡Suscripción exitosa! Tu nuevo plan es: " + clienteActualizado.membresia);
+            window.location.reload();
+
+        } else {
+            // Error (ej. 400 Bad Request): Lee el texto de error (evita SyntaxError)
+            const errorText = await response.text();
+            console.error('Error del servidor:', errorText);
+            alert("Error (" + response.status + "): " + errorText);
+        }
+
+    } catch (error) {
+        console.error('Error de red (asegúrate de que el backend esté corriendo):', error);
+        alert("Error de conexión. Asegúrate de que el backend esté corriendo y revisa la consola.");
+    }
+}
+
+// Asegúrate de que estas variables estén definidas al inicio de tu script:
+const user = JSON.parse(sessionStorage.getItem("cliente"));
+const planButtons = document.querySelectorAll('.membership-card .cta-btn, .membership-btn'); 
+// Nota: Uso ambas clases cta-btn y membership-btn por robustez
+
+if (planButtons.length >= 2) {
+    // Asignación de botones: [0] = PREMIUM, [1] = EMPRESARIAL (VIP/A)
+    const btnPremium = planButtons[0]; 
+    const btnEmpresarial = planButtons[1]; 
+    
+    // Listener para PREMIUM (Categoría B)
+    btnPremium.addEventListener('click', () => {
+        if (!user) {
+            // Si estás en membresia.html, usa loginModal.show(); si está definido.
+            alert("Debes iniciar sesión para suscribirte."); 
             return;
         }
- 
-        // Mostrar loading
-        btnRegistro.disabled = true;
-        btnText.style.display = 'none';
-        btnLoading.style.display = 'inline-block';
- 
-        try {
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    nombre: nombre,
-                    apellido: apellido,
-                    dni: dni,
-                    telefono: telefono,
-                    usuario: usuario,
-                    contrasena: contrasena,
-                    pais: pais,
-                    direccion: direccion,
-                    codigo_postal: codigo_postal
-                })
-            });
- 
-            const data = await response.json();
- 
-            if (data.success) {
-                mostrarAlerta('¡Registro exitoso!', 'success');
- 
-                    sessionStorage.setItem("cliente", JSON.stringify({
-                    nombre: nombre,
-                    apellido: apellido,
-                    dni: dni,
-                    telefono: telefono,
-                    usuario: usuario,
-                    pais: pais,
-                    direccion: direccion,
-                    codigo_postal: codigo_postal
-                }));
- 
-                // Redirigir al login después de 1.5 segundos
-                setTimeout(() => {
-                    window.location.href = '../Home/Home.html';
-                }, 1500);
-            } else {
-                mostrarAlerta(data.mensaje || 'Error en el registro', 'danger');
-                resetButton();
+        
+        if (user.membresia === 'PREMIUM') {
+            alert("Ya estás suscripto al plan PREMIUM.");
+        } else if (user.membresia === 'EMPRESARIAL') {
+            if (confirm("Ya tienes el plan EMPRESARIAL. ¿Estás seguro de que quieres cambiar al plan PREMIUM?")) {
+                suscribirUsuario(user.id, 'B'); // Llama al endpoint ConductoresB
             }
-        } catch (error) {
-            console.error('Error:', error);
-            mostrarAlerta('Error al conectar con el servidor. Verifique que el backend esté ejecutándose.', 'danger');
-            resetButton();
+        } else {
+            suscribirUsuario(user.id, 'B');
         }
     });
- 
-    function resetButton() {
-        btnRegistro.disabled = false;
-        btnText.style.display = 'inline';
-        btnLoading.style.display = 'none';
-    }
- 
-    function mostrarAlerta(mensaje, tipo) {
-        const alert = document.createElement('div');
-        alert.className = `alert alert-${tipo} alert-dismissible fade show`;
-        alert.innerHTML = `
-            ${mensaje}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        `;
+    
+    // Listener para EMPRESARIAL (Categoría A)
+    btnEmpresarial.addEventListener('click', () => {
+        if (!user) {
+            // Si estás en membresia.html, usa loginModal.show(); si está definido.
+            alert("Debes iniciar sesión para suscribirte.");
+            return;
+        }
         
-        alertContainer.appendChild(alert);
- 
-        setTimeout(() => {
-            alert.remove();
-        }, 4000);
-    }
- 
-    window.addEventListener('load', () => {
-        alertContainer.innerHTML = '';
+        if (user.membresia === 'EMPRESARIAL') {
+            alert("Ya estás suscripto al plan EMPRESARIAL.");
+        } else if (user.membresia === 'PREMIUM') {
+            if (confirm("Ya tienes el plan PREMIUM. ¿Estás seguro de que quieres cambiar al plan EMPRESARIAL?")) {
+                suscribirUsuario(user.id, 'A'); // Llama al endpoint ConductoresA
+            }
+        } else {
+            suscribirUsuario(user.id, 'A');
+        }
     });
+}
+
+
 </script>
- 
 </body>
 </html>

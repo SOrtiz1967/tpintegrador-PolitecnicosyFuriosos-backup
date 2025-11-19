@@ -92,7 +92,7 @@
  
                     <div class="membership-card">
                         <div class="membership-header">
-                            <h4>Empresarial</h4>
+                            <h4>VIP</h4>
                             <p class="price">$49.99<span>/mes</span></p>
                         </div>
                         <ul class="membership-features">
@@ -181,7 +181,8 @@
  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // --- LÓGICA EXISTENTE ---
+    // --- LÓGICA DE USUARIO Y MODAL ---
+    // Asegúrate de que tu login guarda el ID como 'id' en el objeto JSON
     const user = JSON.parse(sessionStorage.getItem("cliente"));
     const perfilBtn = document.getElementById("perfilBtn");
     
@@ -205,11 +206,11 @@
  
     const botones = document.querySelectorAll(".membership-card .cta-btn");
     let btnPremium = null;
-    let btnEmpresarial = null;
+    let btnVIP = null;
  
     if (botones.length === 2) {
-        btnPremium = botones[0];
-        btnEmpresarial = botones[1];
+        btnPremium = botones[0]; // Plan Premium
+        btnVIP = botones[1]; // Plan VIP (Antes Empresarial)
     }
  
     if(btnPremium) {
@@ -218,8 +219,8 @@
                 loginModal.show();
             } else if (user.membresia === 'PREMIUM') {
                 alert("Ya estás suscripto a este plan.");
-            } else if (user.membresia === 'EMPRESARIAL') {
-                if (confirm("Ya tienes el plan EMPRESARIAL. ¿Estás seguro de que quieres cambiar al plan PREMIUM?")) {
+            } else if (user.membresia === 'VIP') {
+                if (confirm("Ya tienes el plan VIP. ¿Estás seguro de que quieres cambiar al plan PREMIUM?")) {
                     suscribirUsuario(user.id, 'B'); // 'B' es PREMIUM
                 }
             } else {
@@ -228,15 +229,15 @@
         });
     }
  
-    if(btnEmpresarial) {
-        btnEmpresarial.addEventListener("click", () => {
+    if(btnVIP) {
+        btnVIP.addEventListener("click", () => {
             if (!user) {
                 loginModal.show();
-            } else if (user.membresia === 'EMPRESARIAL') {
+            } else if (user.membresia === 'VIP') {
                 alert("Ya estás suscripto a este plan.");
             } else if (user.membresia === 'PREMIUM') {
-                if (confirm("Ya tienes el plan PREMIUM. ¿Estás seguro de que quieres cambiar al plan EMPRESARIAL?")) {
-                    suscribirUsuario(user.id, 'A'); // 'A' es EMPRESARIAL
+                if (confirm("Ya tienes el plan PREMIUM. ¿Estás seguro de que quieres cambiar al plan VIP?")) {
+                    suscribirUsuario(user.id, 'A'); // 'A' es VIP
                 }
             } else {
                 suscribirUsuario(user.id, 'A');
@@ -244,15 +245,23 @@
         });
     }
  
-    // 4. Función reutilizable para llamar al API
+    // Función reutilizable para llamar al API
     async function suscribirUsuario(clienteId, tipoPlan) {
         
-        // --- ESTA ES LA LÍNEA ARREGLADA ---
-        // Le decimos la URL COMPLETA de tu backend de Spring Boot
+        // --- VALIDACIÓN ESTRICTA DEL ID (Para evitar Error 400: The given id must not be null) ---
+        // Verificamos que el ID exista y sea de tipo 'number' (si vino de la sesión, es un número)
+        if (!clienteId || typeof clienteId !== 'number') {
+            alert("Error de sesión: No se pudo obtener el ID del usuario. Por favor, vuelve a iniciar sesión.");
+            console.error('ID de cliente no válido para la suscripción:', clienteId);
+            return; 
+        }
+        // ------------------------------------------------------------------------------------------
+        
         const baseUrl = "http://localhost:8081";
         const endpoint = (tipoPlan === 'A') ? `${baseUrl}/api/conductoresA` : `${baseUrl}/api/conductoresB`;
         
-        const data = { clienteId: clienteId };
+        // El DTO que envías
+        const data = { clienteId: clienteId }; // Envía el ID con el nombre 'clienteId' para el DTO de Java
  
         try {
             const response = await fetch(endpoint, {
@@ -264,6 +273,7 @@
             });
  
             if (response.ok) {
+                // Si es 200 OK, leemos el JSON del cliente actualizado
                 const clienteActualizado = await response.json();
                 sessionStorage.setItem("cliente", JSON.stringify(clienteActualizado));
                 
@@ -271,13 +281,14 @@
                 window.location.reload();
  
             } else {
-                const error = await response.json();
-                alert("Error: " + (error.message || "No se pudo completar la suscripción."));
+                // Si es 400 o cualquier otro error, leemos el texto del error
+                const errorText = await response.text();
+                console.error('Error del servidor:', errorText);
+                alert("Error (" + response.status + "): " + errorText);
             }
  
         } catch (error) {
-            // Este error (CORS) es el que probablemente veas ahora
-            console.error('Error de red (probablemente CORS):', error);
+            console.error('Error de red (asegúrate de que el backend esté corriendo):', error);
             alert("Error de conexión. Asegúrate de que el backend esté corriendo y revisa la consola.");
         }
     }
