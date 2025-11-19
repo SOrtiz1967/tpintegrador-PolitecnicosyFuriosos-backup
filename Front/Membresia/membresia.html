@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Planes de Membresía</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Planes de Membresía</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="membresia.css">
 </head>
 <body>
-
+ 
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <img src="../imagenes_generales/logo_sin_fondo.png" alt="logo" width="100em" height="100em">
@@ -18,7 +20,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav me-3">
-            <li class="nav-item"><a class="nav-link" href="#">Marcas</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Home/Home.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Garage</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Catálogo</a></li>
           </ul>
@@ -28,7 +30,7 @@
         </div>
       </div>
     </nav>
-
+ 
     <main>
         <section class="hero">
             <div class="hero-content">
@@ -37,7 +39,7 @@
                 <a href="#planes" class="cta-btn hero-btn">Ver Planes</a>
             </div>
             </section>
-
+ 
         <section class="benefits">
             <div class="container">
                 <h2 class="section-title">¿Por Qué Unirte?</h2>
@@ -68,7 +70,7 @@
                 </div>
             </div>
         </section>
-
+ 
         <section class="plans" id="planes">
             <div class="container">
                 <h2 class="section-title">Elige tu Plan</h2>
@@ -87,7 +89,7 @@
                         </ul>
                         <button class="cta-btn">Suscribirse</button>
                     </div>
-
+ 
                     <div class="membership-card">
                         <div class="membership-header">
                             <h4>Empresarial</h4>
@@ -106,13 +108,56 @@
             </div>
         </section>
     </main>
-
-    <footer class="footer">
+ 
+    <footer class="footer-premium">
         <div class="container">
-            <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
+          <div class="footer-content">
+    
+            <div class="footer-section">
+              <div class="footer-brand"><h4>P&F</h4></div>
+              <p class="footer-tagline">Garage inteligente y autos de lujo</p>
+              <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">
+                Experimentá la excelencia en cada detalle. Desde estacionamiento premium hasta la flota más exclusiva de autos de alta gama.
+              </p>
+    
+            </div>
+    
+            <div class="footer-section">
+              <h4>Servicios</h4>
+              <ul>
+                <li><a href="../Home/Home.html#estacionar">Estacionamiento Inteligente</a></li>
+                <li><a href="../Home/Home.html#garage">Reservar Auto</a></li>
+                <li><a href="../Home/Home.html#servicios">Mantenimiento Premium</a></li>
+                <li><a href="#">Detailing & Personalización</a></li>
+                <li><a href="membresia.html">Membresías Exclusivas</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-section">
+              <h4>Empresa</h4>
+              <ul>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Nuestra Flota</a></li>
+                <li><a href="#">Marcas</a></li>
+                <li><a href="#">Eventos & Experiencias</a></li>
+                <li><a href="#">Contacto</a></li>
+              </ul>
+            </div>
+    
+    
+          </div>
+    
+          <div class="footer-bottom">
+            <p>© 2025 POLITÉCNICOS Y FURIOSOS. Todos los derechos reservados.</p>
+            <div class="footer-legal">
+              <a href="#">Términos y Condiciones</a>
+              <a href="#">Política de Privacidad</a>
+              <a href="#">Cookies</a>
+            </div>
+          </div>
         </div>
     </footer>
-
+ 
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content text-center">
@@ -133,33 +178,110 @@
         </div>
       </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const user = JSON.parse(sessionStorage.getItem("cliente")); 
-        const perfilBtn = document.getElementById("perfilBtn");
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // --- LÓGICA EXISTENTE ---
+    const user = JSON.parse(sessionStorage.getItem("cliente"));
+    const perfilBtn = document.getElementById("perfilBtn");
+    
+    const loginModalEl = document.getElementById("loginModal");
+    let loginModal;
+    if (loginModalEl) {
+        loginModal = new bootstrap.Modal(loginModalEl);
+    }
+ 
+    if (user) {
+      perfilBtn.textContent = `${user.nombre} ${user.apellido}`;
+      perfilBtn.classList.remove("btn-outline-light");
+      perfilBtn.classList.add("btn-success");
+      perfilBtn.style.whiteSpace = "nowrap";
+      perfilBtn.removeAttribute("data-bs-toggle");
+      perfilBtn.removeAttribute("data-bs-target");
+      perfilBtn.onclick = () => window.location.href = "../Perfil/perfil.html";
+    }
+ 
+    // --- LÓGICA DE SUSCRIPCIÓN ---
+ 
+    const botones = document.querySelectorAll(".membership-card .cta-btn");
+    let btnPremium = null;
+    let btnEmpresarial = null;
+ 
+    if (botones.length === 2) {
+        btnPremium = botones[0];
+        btnEmpresarial = botones[1];
+    }
+ 
+    if(btnPremium) {
+        btnPremium.addEventListener("click", () => {
+            if (!user) {
+                loginModal.show();
+            } else if (user.membresia === 'PREMIUM') {
+                alert("Ya estás suscripto a este plan.");
+            } else if (user.membresia === 'EMPRESARIAL') {
+                if (confirm("Ya tienes el plan EMPRESARIAL. ¿Estás seguro de que quieres cambiar al plan PREMIUM?")) {
+                    suscribirUsuario(user.id, 'B'); // 'B' es PREMIUM
+                }
+            } else {
+                suscribirUsuario(user.id, 'B');
+            }
+        });
+    }
+ 
+    if(btnEmpresarial) {
+        btnEmpresarial.addEventListener("click", () => {
+            if (!user) {
+                loginModal.show();
+            } else if (user.membresia === 'EMPRESARIAL') {
+                alert("Ya estás suscripto a este plan.");
+            } else if (user.membresia === 'PREMIUM') {
+                if (confirm("Ya tienes el plan PREMIUM. ¿Estás seguro de que quieres cambiar al plan EMPRESARIAL?")) {
+                    suscribirUsuario(user.id, 'A'); // 'A' es EMPRESARIAL
+                }
+            } else {
+                suscribirUsuario(user.id, 'A');
+            }
+        });
+    }
+ 
+    // 4. Función reutilizable para llamar al API
+    async function suscribirUsuario(clienteId, tipoPlan) {
         
-        // Buscamos el modal, pero esta vez no lo mostramos al cargar la página
-        const loginModalEl = document.getElementById("loginModal");
-        if (loginModalEl) {
-            const loginModal = new bootstrap.Modal(loginModalEl);
+        // --- ESTA ES LA LÍNEA ARREGLADA ---
+        // Le decimos la URL COMPLETA de tu backend de Spring Boot
+        const baseUrl = "http://localhost:8081";
+        const endpoint = (tipoPlan === 'A') ? `${baseUrl}/api/conductoresA` : `${baseUrl}/api/conductoresB`;
+        
+        const data = { clienteId: clienteId };
+ 
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+ 
+            if (response.ok) {
+                const clienteActualizado = await response.json();
+                sessionStorage.setItem("cliente", JSON.stringify(clienteActualizado));
+                
+                alert("¡Suscripción exitosa! Tu nuevo plan es: " + clienteActualizado.membresia);
+                window.location.reload();
+ 
+            } else {
+                const error = await response.json();
+                alert("Error: " + (error.message || "No se pudo completar la suscripción."));
+            }
+ 
+        } catch (error) {
+            // Este error (CORS) es el que probablemente veas ahora
+            console.error('Error de red (probablemente CORS):', error);
+            alert("Error de conexión. Asegúrate de que el backend esté corriendo y revisa la consola.");
         }
-
-        if (user) {
-          // ✅ Usuario logueado
-          perfilBtn.textContent = `${user.nombre} ${user.apellido}`;
-          perfilBtn.classList.remove("btn-outline-light");
-          perfilBtn.classList.add("btn-success");
-          perfilBtn.style.whiteSpace = "nowrap";
-          perfilBtn.removeAttribute("data-bs-toggle");
-          perfilBtn.removeAttribute("data-bs-target");
-          perfilBtn.onclick = () => window.location.href = "../Perfil/perfil.html";
-          
-        } else {
-          // ❌ Usuario NO logueado
-          // No hacemos nada al cargar, el botón simplemente abrirá el modal
-        }
-  </script>
-
+    }
+</script>
+ 
 </body>
 </html>
