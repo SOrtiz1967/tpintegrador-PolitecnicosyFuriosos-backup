@@ -16,33 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ModeloAutorizado`
---
-
-DROP TABLE IF EXISTS `ModeloAutorizado`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ModeloAutorizado` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `costo` double NOT NULL,
-  `nombreModelo` varchar(255) DEFAULT NULL,
-  `cliente_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK4sxy2sp8yy5umlgee049334t4` (`cliente_id`),
-  CONSTRAINT `FK4sxy2sp8yy5umlgee049334t4` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ModeloAutorizado`
---
-
-LOCK TABLES `ModeloAutorizado` WRITE;
-/*!40000 ALTER TABLE `ModeloAutorizado` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ModeloAutorizado` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `alerta`
 --
 
@@ -198,6 +171,33 @@ LOCK TABLES `lugares` WRITE;
 /*!40000 ALTER TABLE `lugares` DISABLE KEYS */;
 INSERT INTO `lugares` VALUES (134,6,101,'premium',1,'reservado',120),(135,6,102,'premium',1,'reservado',120),(136,6,103,'premium',1,'disponible',120),(137,6,104,'premium',1,'disponible',120),(138,6,105,'premium',1,'disponible',120),(139,6,106,'premium',1,'disponible',120),(140,6,107,'premium',1,'reservado',120),(141,6,108,'premium',1,'disponible',120),(142,6,109,'premium',1,'disponible',120),(143,6,110,'premium',1,'disponible',120),(144,6,111,'premium',1,'disponible',120),(145,6,112,'premium',1,'disponible',120),(146,6,113,'premium',1,'disponible',120),(147,6,114,'premium',1,'reservado',120),(148,6,115,'premium',1,'disponible',120),(149,6,116,'premium',1,'disponible',120),(150,6,117,'premium',1,'disponible',120),(151,6,118,'premium',1,'disponible',120),(152,6,119,'premium',1,'disponible',120),(153,6,120,'premium',1,'disponible',120),(154,6,201,'auto',2,'disponible',70),(155,6,202,'auto',2,'disponible',70),(156,6,203,'auto',2,'disponible',70),(157,6,204,'auto',2,'disponible',70),(158,6,205,'auto',2,'disponible',70),(159,6,206,'auto',2,'disponible',70),(160,6,207,'auto',2,'disponible',70),(161,6,208,'auto',2,'disponible',70),(162,6,209,'auto',2,'disponible',70),(163,6,210,'auto',2,'disponible',70),(164,6,211,'auto',2,'disponible',70),(165,6,212,'auto',2,'disponible',70),(166,6,213,'auto',2,'disponible',70),(167,6,214,'auto',2,'disponible',70),(168,6,215,'auto',2,'disponible',70),(169,6,216,'auto',2,'disponible',70),(170,6,217,'auto',2,'disponible',70),(171,6,218,'auto',2,'disponible',70),(172,6,219,'auto',2,'disponible',70),(173,6,220,'auto',2,'disponible',70),(174,6,301,'moto',3,'disponible',40),(175,6,302,'moto',3,'disponible',40),(176,6,303,'moto',3,'disponible',40),(177,6,304,'moto',3,'disponible',40),(178,6,305,'moto',3,'disponible',40),(179,6,306,'moto',3,'disponible',40),(180,6,307,'moto',3,'disponible',40),(181,6,308,'moto',3,'disponible',40),(182,6,309,'moto',3,'disponible',40),(183,6,310,'moto',3,'disponible',40),(184,6,311,'auto',3,'disponible',60),(185,6,312,'auto',3,'disponible',60),(186,6,313,'auto',3,'disponible',60),(187,6,314,'auto',3,'disponible',60),(188,6,315,'auto',3,'disponible',60),(189,6,316,'auto',3,'disponible',60),(190,6,317,'auto',3,'disponible',60),(191,6,318,'auto',3,'disponible',60),(192,6,319,'auto',3,'disponible',60),(193,6,320,'auto',3,'disponible',60);
 /*!40000 ALTER TABLE `lugares` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `modelo_autorizado`
+--
+
+DROP TABLE IF EXISTS `modelo_autorizado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `modelo_autorizado` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `costo` double NOT NULL,
+  `nombre_modelo` varchar(255) DEFAULT NULL,
+  `cliente_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK4sxy2sp8yy5umlgee049334t4` (`cliente_id`),
+  CONSTRAINT `FK4sxy2sp8yy5umlgee049334t4` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `modelo_autorizado`
+--
+
+LOCK TABLES `modelo_autorizado` WRITE;
+/*!40000 ALTER TABLE `modelo_autorizado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `modelo_autorizado` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -461,4 +461,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-20  8:31:59
+-- Dump completed on 2025-11-20  8:35:12
