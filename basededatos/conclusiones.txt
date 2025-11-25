@@ -1,0 +1,46 @@
+----------------------------------Conclusiones a partir de el dashboard de analisis de datos-----------------------------------------------------------
+-Benjamin Serrano:
+Las reservas muestran variaciones claras según la época del año. En los meses de mayor movimiento, como mitad de año y el período que se acerca
+a fin de año donde se observa un aumento marcado en la cantidad de reservas. Esto suele coincidir con vacaciones, fines de semana largos o momentos 
+en los que las personas tienen más necesidad de trasladarse. En esos periodos, la demanda crece y la gente suele confirmar antes, incluso aceptando 
+precios más altos o menos opciones disponibles.
+En los meses más tranquilos, en cambio, la cantidad de reservas disminuye. Ahí la gente ajusta más el gasto o simplemente no tiene tanta necesidad 
+de movilizarse, por lo que las decisiones se toman con más calma. También cambia el tipo de vehículo elegido. En épocas fuertes se priorizan autos 
+más prácticos para viajar, mientras que en épocas más relajadas aparecen elecciones más vinculadas al gusto personal.
+En definitiva, la variación de reservas a lo largo del año refleja tanto las necesidades de cada momento como el nivel de gasto que las personas 
+están dispuestas o pueden asumir. Cuando la demanda aumenta, se nota que el poder adquisitivo se estira para cumplir con la necesidad. Cuando baja, 
+las decisiones son más selectivas y moderadas. De esta forma concluimos que debemos lanzar promociones en las épocas de menos demanda para incrementar 
+la misma y aprovecharnos de la necesidad y gasto elevado que tiene la gente durante ciertas fechas.
+
+-Lautaro Scanio:
+El análisis de la cartera de clientes y su geolocalización nos brinda perspectivas fundamentales para la estrategia de crecimiento y marketing. 
+Actualmente, el sistema registra 32 clientes con un total de 76 reservas, una proporción que indica que la mayoría de nuestros clientes son recurrentes o 
+realizan múltiples reservas, sugiriendo una buena fidelización inicial o al menos un alto nivel de compromiso con la plataforma . En cuanto a la 
+distribución geográfica, el mapa de calor muestra una clara concentración de la actividad de reservas en América del Norte y América del Sur, con focos 
+de alta densidad, mientras que otras regiones como África y Europa muestran una participación mucho menor . Este patrón no solo confirma dónde dirigir 
+nuestros esfuerzos de marketing más intensos (las Américas), sino que también nos invita a investigar las razones de la baja penetración en los otros 
+continentes para evaluar posibles mercados de expansión o si se trata de una limitación en la oferta de modelos o precios adaptados a esas regiones. 
+La alta fidelidad observada, junto con la concentración geográfica, permite refinar campañas promocionales dirigidas específicamente a la base de clientes 
+existente en las zonas de mayor actividad.
+
+-Luciano Rojas:
+El análisis del mercado por tipo de vehículo revela una marcada preferencia, lo que proporciona una guía clara para la gestión de inventario. 
+El segmento DEPORTIVO domina la demanda, representando el 37.5% de las reservas. Seguido de cerca, los tipos SUV y CLÁSICO empatan en importancia, 
+con una participación del 25% cada uno. El tipo CONVERTIBLE constituye el nicho más pequeño, con el 12.5%.
+ 
+Esta segmentación debe alinearse con la gestión temporal de la demanda. El gráfico de total por reservas filtrado por fecha muestra que tanto el volumen 
+(Record Count) como el valor total de las reservas experimentan una alta volatilidad, concentrándose en períodos específicos. Se observan picos de alto 
+valor de reserva alrededor del 24 de julio y, más significativamente, cerca del 1 de octubre.
+ 
+En síntesis, la estrategia más efectiva es capitalizar los picos de alta demanda (julio y octubre) asegurando la máxima disponibilidad del inventario en 
+el segmento preferido, el DEPORTIVO, para maximizar el valor total de las reservas durante estos periodos clave.
+
+-Santiago Ortiz:
+Si bien el análisis superficial de la participación de mercado posiciona a Range Rover como líder en reservas, superando a competidores 
+de lujo como Mercedes y Porsche, el verdadero valor del análisis está en encontrar la causa de su liderazgo. Viendo el gráfico de calificación 
+en relación al precio, vemos que el modelo estrella de Range Rover es el más destacado en relación calidad-precio según las reseñas de los clientes, 
+lo que nos brinda una información clave para mejorar nuestro accionar con los autos que tenemos.
+Interactuando con el control de marca podemos desagregar métricas críticas para determinar cosas como la cantidad de clientes que tiene, permitiéndonos 
+ver si se trata de una diversidad de clientes o de un grupo "fiel" al modelo; así como podemos ver lo mismo en la ubicación de las reservas, 
+pudiendo ver cómo ciertas zonas tienen cierto favoritismo por la marca o modelo, lo que nos abre las puertas a promociones o cambiar nuestro 
+accionar para con esa área en particular
