@@ -1,6 +1,5 @@
 package com.politecnicosYfuriosos.Politecnicos_y_furiosos.Modelo;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -30,12 +29,9 @@ public class Cliente {
     private MembershipPlan membresia;
 
     @OneToMany(mappedBy = "clientePrincipal")
-    @JsonIgnore
     private List<Reserva> reservas;
 
-
     @OneToMany(mappedBy = "cliente")
-    @JsonIgnore
     private List<ReservaGaraje> reservasGaraje;
 
 
